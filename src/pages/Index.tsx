@@ -531,13 +531,13 @@ export default function MoneyUnpackingLandingPage() {
               </Card>
 
               {/* Card 2 — 3 месяца (featured) */}
-              <Card className="pricing-card relative flex flex-col gap-6 rounded-2xl border border-[#C9A84C]/40 bg-gradient-to-br from-[#2a1f00] to-[#0E0E0E] p-6 shadow-lg md:p-8">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+              <Card className="pricing-card flex flex-col gap-6 rounded-2xl border border-[#C9A84C]/40 bg-gradient-to-br from-[#2a1f00] to-[#0E0E0E] p-6 shadow-lg md:p-8">
+                <div>
                   <span className="rounded-full bg-[#C9A84C] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-black">
                     самый выгодный вариант
                   </span>
                 </div>
-                <div className="flex flex-col gap-1 mt-2">
+                <div className="flex flex-col gap-1">
                   <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
                     Система на 3 месяца
                   </h3>
