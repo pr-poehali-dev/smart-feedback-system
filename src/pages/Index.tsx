@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function YerbaVerdeLandingPage() {
+export default function MoneyUnpackingLandingPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
 
@@ -21,7 +21,6 @@ export default function YerbaVerdeLandingPage() {
   const ctaRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    // Animate progress bar from 0 to 100 over 3 seconds
     const duration = 3000
     const interval = 30
     const steps = duration / interval
@@ -33,7 +32,6 @@ export default function YerbaVerdeLandingPage() {
       if (currentProgress >= 100) {
         currentProgress = 100
         clearInterval(timer)
-        // Wait a bit before hiding preloader
         setTimeout(() => {
           setIsLoading(false)
         }, 200)
@@ -62,7 +60,6 @@ export default function YerbaVerdeLandingPage() {
         }
       }
 
-      // Hero animation
       gsap.from(heroRef.current?.querySelector(".hero-content"), {
         opacity: 0,
         y: 60,
@@ -78,7 +75,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // Benefits section
       gsap.from(benefitsRef.current?.querySelector(".benefits-title"), {
         scrollTrigger: {
           trigger: benefitsRef.current,
@@ -102,7 +98,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // About section
       gsap.from(aboutRef.current?.querySelector(".about-image"), {
         scrollTrigger: {
           trigger: aboutRef.current,
@@ -125,7 +120,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // Desire section
       gsap.from(desireRef.current?.querySelector("h2"), {
         scrollTrigger: {
           trigger: desireRef.current,
@@ -149,7 +143,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // Instigate section
       gsap.from(instigateRef.current?.querySelector(".instigate-content"), {
         scrollTrigger: {
           trigger: instigateRef.current,
@@ -173,7 +166,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // Why section
       gsap.from(whyRef.current?.querySelector(".why-content"), {
         scrollTrigger: {
           trigger: whyRef.current,
@@ -197,7 +189,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // Pricing cards
       gsap.from(pricingRef.current?.querySelectorAll(".pricing-card"), {
         scrollTrigger: {
           trigger: pricingRef.current,
@@ -210,7 +201,6 @@ export default function YerbaVerdeLandingPage() {
         ease: "power3.out",
       })
 
-      // CTA section
       gsap.from(ctaRef.current?.querySelector(".cta-box"), {
         scrollTrigger: {
           trigger: ctaRef.current,
@@ -231,17 +221,15 @@ export default function YerbaVerdeLandingPage() {
       {isLoading && (
         <div className="fixed inset-0 z-[100000] flex flex-col items-center justify-center bg-[#0E0E0E]">
           <div className="flex flex-col items-center gap-8 px-6">
-            {/* Logo or brand name */}
-            <h1 className="font-serif text-4xl tracking-tight text-white md:text-5xl lg:text-6xl">
-              YERBA
-              <span className="block text-[#B59F26]">VERDE</span>
+            <h1 className="font-serif text-4xl tracking-tight text-white md:text-5xl lg:text-6xl text-center">
+              Денежная
+              <span className="block text-[#C9A84C]">Распаковка</span>
             </h1>
 
-            {/* Progress bar container */}
             <div className="w-full max-w-md">
               <div className="h-2 w-full overflow-hidden rounded-full bg-[#1E1E1E]">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-[#6B5C08] to-[#B59F26] transition-all duration-300 ease-out"
+                  className="h-full rounded-full bg-gradient-to-r from-[#8B6914] to-[#C9A84C] transition-all duration-300 ease-out"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -253,59 +241,34 @@ export default function YerbaVerdeLandingPage() {
 
       <main className="w-full overflow-x-hidden bg-[#0E0E0E]">
         {/* Marquee */}
-        <div ref={marqueeRef} className="w-full overflow-hidden bg-[#6B5C08] py-4">
+        <div ref={marqueeRef} className="w-full overflow-hidden bg-[#8B6914] py-4">
           <div className="marquee-content flex items-center gap-4 whitespace-nowrap">
-            {/* First set of items */}
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
-
-            {/* Duplicated set for seamless loop */}
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
-              <span className="font-serif text-xs font-normal text-black md:text-sm">ПРОМОКОД: ПЕРВЫЙ10</span>
-            </div>
-            <div className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
-              <span className="font-serif text-xs font-normal text-white md:text-sm">
-                СКИДКА 10% НА ПЕРВЫЙ ЗАКАЗ
-              </span>
-            </div>
+            {[...Array(6)].map((_, i) => (
+              i % 2 === 0 ? (
+                <div key={i} className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
+                  <span className="font-serif text-xs font-normal text-black md:text-sm">БОНУС: 3 ПРОШЛЫХ МЕСЯЦА</span>
+                </div>
+              ) : (
+                <div key={i} className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
+                  <span className="font-serif text-xs font-normal text-white md:text-sm">
+                    ОНЛАЙН · ПРЯМОЙ ЭФИР · ЗАПИСЬ ОСТАЁТСЯ
+                  </span>
+                </div>
+              )
+            ))}
+            {[...Array(6)].map((_, i) => (
+              i % 2 === 0 ? (
+                <div key={`d-${i}`} className="flex items-center justify-center rounded-xl bg-white px-6 py-1.5 md:px-8">
+                  <span className="font-serif text-xs font-normal text-black md:text-sm">БОНУС: 3 ПРОШЛЫХ МЕСЯЦА</span>
+                </div>
+              ) : (
+                <div key={`d-${i}`} className="flex items-center justify-center rounded-xl px-4 py-1.5 md:px-6">
+                  <span className="font-serif text-xs font-normal text-white md:text-sm">
+                    ОНЛАЙН · ПРЯМОЙ ЭФИР · ЗАПИСЬ ОСТАЁТСЯ
+                  </span>
+                </div>
+              )
+            ))}
           </div>
         </div>
 
@@ -314,297 +277,306 @@ export default function YerbaVerdeLandingPage() {
           ref={heroRef}
           className="relative flex min-h-[600px] w-full items-center justify-center px-6 py-16 md:min-h-[800px] md:px-20 md:py-24 lg:min-h-[1030px] lg:px-80"
           style={{
-            backgroundImage: `radial-gradient(74.86% 63.04% at 50% 71.13%, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%), linear-gradient(190.21deg, rgba(14, 14, 14, 0) 48.79%, #0E0E0E 91.19%), url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-background-QatnDXVXAGi0F0KCe4tuAQxe2m4T4E.png)`,
+            backgroundImage: `radial-gradient(74.86% 63.04% at 50% 71.13%, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%), linear-gradient(190.21deg, rgba(14, 14, 14, 0) 48.79%, #0E0E0E 91.19%), url(/images/design-mode/hero-image.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           <div className="flex w-full max-w-7xl flex-col items-center gap-8 md:gap-12 lg:gap-14">
             <div className="hero-content flex flex-col items-center gap-5 text-center">
+              <span className="rounded-full border border-[#C9A84C]/40 bg-[#C9A84C]/10 px-5 py-2 text-sm text-[#C9A84C]">
+                Ежемесячный онлайн-формат
+              </span>
               <h1 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-5xl lg:text-[56px]">
-                Откройте настоящий вкус чая мате
+                Денежная распаковка месяца<br />
+                <span className="text-[#C9A84C]">с Екатериной Усовой</span>
               </h1>
               <p className="max-w-4xl text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                Уникальный опыт, который превращает каждую чашку в особенный момент.
+                Каждый месяц — живая сессия для раскрытия денежной энергии, снятия внутренних блоков и перехода на новый финансовый уровень.
+              </p>
+              <p className="max-w-2xl text-sm text-[#C9A84C]/80 md:text-base">
+                При покупке сейчас — бонус: записи и практики за прошлые 3 месяца распаковки
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2.5">
-                <Button className="h-12 rounded-xl bg-white px-4 font-serif text-base text-[#0E0E0E] hover:bg-white/90 md:text-lg">
-                  Купить сейчас
+                <Button
+                  className="h-12 rounded-xl bg-white px-6 font-serif text-base text-[#0E0E0E] hover:bg-white/90 md:text-lg"
+                  onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Присоединиться — от 990 ₽
                 </Button>
                 <Button
                   variant="outline"
                   className="h-12 rounded-xl border-[#CCCCCC] bg-transparent font-serif text-base text-white hover:bg-white/10 md:text-lg"
+                  onClick={() => document.querySelector('#bonus')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Узнать больше
+                  Смотреть бонусы
                 </Button>
               </div>
+              <p className="text-xs text-white/40">Онлайн, прямой эфир. Если не получается прийти — запись остаётся у вас.</p>
             </div>
             <div className="hero-image relative h-[300px] w-full max-w-2xl md:h-[400px] lg:h-[583px] lg:max-w-[884px]">
               <img
                 src="/images/design-mode/hero-image.png"
-                alt="Yerba Verde - премиальный чай мате"
+                alt="Денежная распаковка месяца с Екатериной Усовой"
                 className="h-full w-full object-contain"
               />
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
+        {/* Benefits — Формат */}
         <section ref={benefitsRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 lg:flex-row lg:gap-12">
             <div className="benefits-title flex flex-col gap-6 lg:flex-1">
               <h2 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
-                Непревзойденный вкус и качество
+                Не разовая мотивация, а регулярная работа с денежным состоянием
               </h2>
-              <p className="text-pretty text-base leading-relaxed tracking-tight text-white md:text-lg">
-                Натуральный чай мате высшего качества, сбалансированный и ароматный, без добавления сахара, для
-                настоящих ценителей традиционного напитка.
+              <p className="text-pretty text-base leading-relaxed tracking-tight text-white/70 md:text-lg">
+                Каждый месяц вы приходите в прямой эфир и проходите сессию, направленную на раскрытие денежной энергии и устранение внутренних блоков.
               </p>
             </div>
             <div className="flex flex-col gap-2 lg:flex-1">
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-4xl">100% Натуральный</h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white md:text-base">
-                  Чай мате из лучших плантаций Южной Америки, более 3000 листьев на килограмм.
+              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
+                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">Онлайн, в живом прямом эфире</h3>
+                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
+                  Присутствуйте из любой точки мира — всё, что нужно, это желание меняться.
                 </p>
               </div>
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-4xl">
-                  Мягкий и насыщенный вкус
+              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
+                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
+                  Каждый месяц — новый шаг в глубину
                 </h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white md:text-base">
-                  Идеальный баланс аромата и вкуса, без необходимости добавления сахара.
+                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
+                  Последовательная работа с деньгами, которая даёт накопленный результат.
                 </p>
               </div>
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-4xl">
-                  Выращен в горах
+              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
+                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
+                  Запись остаётся у вас
                 </h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white md:text-base">
-                  Растет на высоте более 1200 метров в идеальных климатических условиях, что обеспечивает
-                  уникальный и стойкий вкус.
+                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
+                  Не смогли прийти онлайн — пересмотрите в удобное время без потери контента.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* About */}
+        {/* About — Что происходит на встрече */}
         <section ref={aboutRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 lg:flex-row lg:gap-12">
             <div className="about-image w-full lg:flex-1">
               <img
                 src="/images/design-mode/about-image.png"
-                alt="Карта происхождения чая мате"
+                alt="Что происходит на встрече"
                 className="h-auto w-full rounded-2xl object-cover"
               />
             </div>
             <div className="about-content flex flex-col gap-6 lg:flex-1">
               <h2 className="font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
-                Происхождение вкуса
+                Что происходит на встрече
               </h2>
-              <p className="text-pretty text-base leading-relaxed tracking-tight text-white md:text-lg">
-                В одной из самых высокогорных точек Южной Америки рождается чай мате, который выделяется
-                своим несравненным качеством. На высоте более 1200 метров идеальный климат и плодородная
-                почва создают условия для выращивания мате с уникальным ароматом и вкусом. Каждый лист
-                тщательно собирается, гарантируя сбалансированный и стойкий вкус, который делает каждую
-                чашку особенной. От горных плантаций до вашей чашки — испытайте настоящую сущность
-                натурального чая мате.
+              <ul className="flex flex-col gap-3">
+                {[
+                  "Уходят страхи, ограничивающие убеждения и установки",
+                  "Снижается внутреннее напряжение и контроль",
+                  "Раскрывается ваша ценность и уверенность",
+                  "Появляется энергия на действия и рост",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-base leading-relaxed text-white/80 md:text-lg">
+                    <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C9A84C]/20 text-xs text-[#C9A84C]">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm italic text-[#C9A84C]/80">
+                Каждая встреча — шаг к вашему новому финансовому уровню.
               </p>
-              <Button className="h-12 w-full rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#B59F26] font-serif text-lg text-white hover:opacity-90 md:text-xl">
-                Купить сейчас
+              <Button
+                className="h-12 w-full rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#C9A84C] font-serif text-lg text-white hover:opacity-90 md:text-xl"
+                onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Присоединиться
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Desire */}
+        {/* Desire — Что меняется в результате */}
         <section ref={desireRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto max-w-7xl">
             <div className="rounded-[40px] border-2 border-[#1E1E1E] bg-[#0E0E0E] px-6 py-12 md:px-12 md:py-16 lg:px-24">
               <h2 className="mb-8 text-balance text-center font-serif text-3xl leading-tight tracking-tight text-white md:mb-12 md:text-4xl lg:text-[56px]">
-                Откройте для себя настоящий вкус традиции в любой момент
+                Что меняется в результате
               </h2>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
-                <div className="desire-image overflow-hidden rounded-2xl rounded-b-none">
-                  <img
-                    src="/images/design-mode/desire-image-01.png"
-                    alt="Yerba Verde - упаковка"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="desire-image overflow-hidden rounded-2xl rounded-b-none">
-                  <img
-                    src="/images/design-mode/desire-image-02.png"
-                    alt="Yerba Verde - упаковка"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="desire-image overflow-hidden rounded-2xl">
-                  <img
-                    src="/images/design-mode/desire-image-03.png"
-                    alt="Yerba Verde - упаковка"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+                {[
+                  { icon: "✦", text: "Начинают приходить новые возможности" },
+                  { icon: "✦", text: "Появляются клиенты и идеи" },
+                  { icon: "✦", text: "Становится больше внутренней опоры" },
+                  { icon: "✦", text: "Деньги перестают быть темой выживания" },
+                ].map((item, i) => (
+                  <div key={i} className="desire-image flex items-start gap-4 rounded-2xl border border-[#C9A84C]/20 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-6 md:p-8">
+                    <span className="text-2xl text-[#C9A84C]">{item.icon}</span>
+                    <p className="text-base leading-relaxed text-white md:text-lg">{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Instigate */}
+        {/* Instigate — Почему важно 3 месяца */}
         <section ref={instigateRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
           <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:gap-12">
             <div className="instigate-content flex flex-col gap-6 text-center">
               <h2 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-[56px]">
-                Чего вы ждете?
+                Почему важно идти на 3 месяца
               </h2>
               <p className="text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                Жизнь состоит из моментов, и хороший мате превращает простое в особенное. Не соглашайтесь на
-                меньшее — выбирайте настоящую эссенцию вкуса и наслаждайтесь каждым глотком.
+                Глубинные изменения не происходят за один раз. Деньги — это система ваших привычек, реакций и состояний.
               </p>
             </div>
-            <div
-              className="instigate-image relative flex min-h-[400px] w-full items-end justify-center rounded-[40px] p-6 md:min-h-[600px] md:p-10 lg:min-h-[850px]"
-              style={{
-                backgroundImage:
-                  "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/box-image-f1qFMJiDw7Rhdpat9cdzPtUdrGnBUq.png)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <Button className="h-16 w-full max-w-md rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#B59F26] font-serif text-xl text-white hover:opacity-90 md:h-24 md:text-3xl lg:text-[32px]">
-                Купить сейчас
-              </Button>
+            <div className="instigate-image grid w-full gap-6 md:grid-cols-2">
+              <div className="flex flex-col gap-4 rounded-[30px] border border-white/10 bg-[#111111] p-6 md:p-8">
+                <h3 className="font-serif text-xl text-white/60">1 месяц</h3>
+                <ul className="flex flex-col gap-2">
+                  {["Даёт инсайт", "Помогает увидеть свои блоки", "Запускает движение"].map((t, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-white/70 md:text-base">
+                      <span className="text-[#C9A84C]">→</span> {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex flex-col gap-4 rounded-[30px] border border-[#C9A84C]/30 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-6 md:p-8">
+                <h3 className="font-serif text-xl text-[#C9A84C]">3 месяца</h3>
+                <ul className="flex flex-col gap-2">
+                  {["Даёт последовательную трансформацию", "Закрепляет результат", "Выводит на новый уровень мышления и дохода"].map((t, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-white md:text-base">
+                      <span className="text-[#C9A84C]">✓</span> {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+            <p className="text-center font-serif text-lg text-[#C9A84C] md:text-xl">
+              Разовое участие даёт инсайт. Система даёт результат.
+            </p>
           </div>
         </section>
 
-        {/* Why */}
-        <section ref={whyRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
+        {/* Why — Бонус */}
+        <section id="bonus" ref={whyRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
           <div className="mx-auto flex max-w-5xl flex-col items-center gap-8 md:gap-12">
             <div className="why-content flex flex-col gap-6 text-center">
               <h2 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-[56px]">
-                Почему выбирают Yerba Verde?
+                Бонус при покупке
               </h2>
               <p className="text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                Жизнь состоит из моментов, и хороший мате превращает простое в особенное. Не соглашайтесь на
-                меньшее — выбирайте настоящую эссенцию вкуса и наслаждайтесь каждым глотком.
+                При покупке вы получаете прошлые 3 месяца распаковки + аудио-практики в подарок.
               </p>
             </div>
             <div className="why-image w-full">
-              <img
-                src="/images/design-mode/why-image.png"
-                alt="Почему выбирают Yerba Verde"
-                className="h-auto w-full rounded-2xl object-cover"
-              />
+              <div className="grid gap-4 md:grid-cols-3">
+                {[
+                  { month: "Февраль", theme: "Проработка внутренней ценности" },
+                  { month: "Март", theme: "Проработка страха остаться без денег, возвращение опоры и безопасности" },
+                  { month: "Апрель", theme: "Проработка негативных денежных установок и убеждений" },
+                ].map((b, i) => (
+                  <div key={i} className="flex flex-col gap-3 rounded-2xl border border-[#C9A84C]/20 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-6">
+                    <span className="text-xs uppercase tracking-widest text-[#C9A84C]/60">{b.month}</span>
+                    <p className="text-sm leading-relaxed text-white md:text-base">{b.theme}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-2xl border border-white/10 bg-[#111111] p-6">
+                <p className="mb-3 text-sm text-white/50 uppercase tracking-widest">Аудио-практики</p>
+                <div className="flex flex-wrap gap-2">
+                  {["Внутренний ребёнок", "Проработка финансовых ограничений", "Раскрытие женской сексуальной энергии"].map((p, i) => (
+                    <span key={i} className="rounded-full border border-[#C9A84C]/30 px-4 py-1.5 text-sm text-[#C9A84C]">{p}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing Cards */}
-        <section ref={pricingRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
-          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-            {/* Card 1 */}
-            <Card className="pricing-card flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#333333] to-[#0E0E0E] p-6 shadow-lg md:p-8">
-              <div className="aspect-square w-full overflow-hidden rounded-[20px] bg-[#6B5C08]">
-                <img
-                  src="/images/design-mode/image-card-01.png"
-                  alt="Чай мате Yerba Verde - 1 кг"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
-                  Чай мате Yerba Verde
-                </h3>
-                <p className="text-sm text-white/55 md:text-base">1 кг</p>
-              </div>
-              <p className="text-4xl font-bold tracking-tight text-white md:text-5xl">2 500 р.</p>
-              <p className="text-xs tracking-tight text-white md:text-sm">Рассрочка до 3 месяцев</p>
-              <Button className="h-12 w-full rounded-xl bg-[#B59F26] text-base font-medium text-white hover:bg-[#B59F26]/90 md:text-lg">
-                КУПИТЬ
-              </Button>
-            </Card>
+        {/* Pricing */}
+        <section id="pricing" ref={pricingRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="mb-10 text-center font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
+              Выберите формат участия
+            </h2>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+              {/* Card 1 — Месяц */}
+              <Card className="pricing-card flex flex-col gap-6 rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1a1a] to-[#0E0E0E] p-6 shadow-lg md:p-8">
+                <div className="flex flex-col gap-1">
+                  <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
+                    Участие на месяц
+                  </h3>
+                  <p className="text-sm text-white/40">Мягкий вход</p>
+                </div>
+                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">990 <span className="text-2xl font-normal">₽</span></p>
+                <ul className="flex flex-col gap-2">
+                  {["1 онлайн-сессия месяца", "Запись текущего эфира", "Подходит для мягкого входа"].map((f, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-white/70 md:text-base">
+                      <span className="text-[#C9A84C]">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button className="mt-auto h-12 w-full rounded-xl bg-white/10 text-base font-medium text-white hover:bg-white/20 md:text-lg">
+                  Выбрать месяц
+                </Button>
+              </Card>
 
-            {/* Card 2 */}
-            <Card className="pricing-card flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#333333] to-[#0E0E0E] p-6 shadow-lg md:p-8">
-              <div className="aspect-square w-full overflow-hidden rounded-[20px] bg-[#6B5C08]">
-                <img
-                  src="/images/design-mode/image-card-02.png"
-                  alt="Набор для мате Yerba Verde"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
-                  Набор для мате Yerba Verde
-                </h3>
-                <p className="text-sm text-white/55 md:text-base">Мате + Калабас + Бомбилья</p>
-              </div>
-              <p className="text-4xl font-bold tracking-tight text-white md:text-5xl">7 500 р.</p>
-              <p className="text-xs tracking-tight text-white md:text-sm">Рассрочка до 4 месяцев</p>
-              <Button className="h-12 w-full rounded-xl bg-[#B59F26] text-base font-medium text-white hover:bg-[#B59F26]/90 md:text-lg">
-                КУПИТЬ
-              </Button>
-            </Card>
-
-            {/* Card 3 */}
-            <Card className="pricing-card flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#333333] to-[#0E0E0E] p-6 shadow-lg md:p-8">
-              <div className="aspect-square w-full overflow-hidden rounded-[20px] bg-[#6B5C08]">
-                <img
-                  src="/images/design-mode/image-card-03.png"
-                  alt="Набор 3 упаковки чая мате Yerba Verde"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
-                  Набор 3 упаковки Yerba Verde
-                </h3>
-                <p className="text-sm text-white/55 md:text-base">3 кг</p>
-              </div>
-              <p className="text-4xl font-bold tracking-tight text-white md:text-5xl">6 900 р.</p>
-              <p className="text-xs tracking-tight text-white md:text-sm">Рассрочка до 3 месяцев</p>
-              <Button className="h-12 w-full rounded-xl bg-[#B59F26] text-base font-medium text-white hover:bg-[#B59F26]/90 md:text-lg">
-                КУПИТЬ
-              </Button>
-            </Card>
-
-            {/* Card 4 */}
-            <Card className="pricing-card flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-br from-[#333333] to-[#0E0E0E] p-6 shadow-lg md:p-8">
-              <div className="aspect-square w-full overflow-hidden rounded-[20px] bg-[#6B5C08]">
-                <img
-                  src="/images/design-mode/image-card-04.png"
-                  alt="Набор 10 упаковок чая мате Yerba Verde"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
-                  Набор 10 упаковок Yerba Verde
-                </h3>
-                <p className="text-sm text-white/55 md:text-base">10 кг</p>
-              </div>
-              <p className="text-4xl font-bold tracking-tight text-white md:text-5xl">19 900 р.</p>
-              <p className="text-xs tracking-tight text-white md:text-sm">Рассрочка до 4 месяцев</p>
-              <Button className="h-12 w-full rounded-xl bg-[#B59F26] text-base font-medium text-white hover:bg-[#B59F26]/90 md:text-lg">
-                КУПИТЬ
-              </Button>
-            </Card>
+              {/* Card 2 — 3 месяца (featured) */}
+              <Card className="pricing-card relative flex flex-col gap-6 rounded-2xl border border-[#C9A84C]/40 bg-gradient-to-br from-[#2a1f00] to-[#0E0E0E] p-6 shadow-lg md:p-8">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="rounded-full bg-[#C9A84C] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-black">
+                    самый выгодный вариант
+                  </span>
+                </div>
+                <div className="flex flex-col gap-1 mt-2">
+                  <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">
+                    Система на 3 месяца
+                  </h3>
+                  <p className="text-sm text-[#C9A84C]/60">Глубокая трансформация</p>
+                </div>
+                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">2 500 <span className="text-2xl font-normal">₽</span></p>
+                <ul className="flex flex-col gap-2">
+                  {["3 месяца участия подряд", "Глубокая последовательная трансформация", "Бонус: прошлые 3 месяца распаковок"].map((f, i) => (
+                    <li key={i} className="flex items-center gap-2 text-sm text-white md:text-base">
+                      <span className="text-[#C9A84C]">✓</span> {f}
+                    </li>
+                  ))}
+                </ul>
+                <Button className="mt-auto h-12 w-full rounded-xl bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-base font-medium text-white hover:opacity-90 md:text-lg">
+                  Взять 3 месяца
+                </Button>
+              </Card>
+            </div>
           </div>
         </section>
 
         {/* CTA */}
         <section ref={ctaRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
           <div className="mx-auto max-w-5xl">
-            <div className="cta-box flex flex-col items-center gap-6 rounded-[20px] bg-gradient-to-r from-[#6B5C08] to-[#B59F26] p-6 md:flex-row md:gap-8 md:p-12 lg:p-16">
+            <div className="cta-box flex flex-col items-center gap-6 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#C9A84C] p-6 md:flex-row md:gap-8 md:p-12 lg:p-16">
               <p className="flex-1 text-balance text-center font-semibold leading-tight tracking-tight text-white md:text-left md:text-2xl lg:text-[26px]">
-                Свяжитесь с нами прямо сейчас и узнайте больше о Yerba Verde!
+                Если вы готовы изменить не только отношение к деньгам, но и свой уровень жизни — вам сюда
               </p>
-              <Button className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
-                Связаться с нами
-              </Button>
+              <div className="flex w-full flex-col gap-3 md:w-auto">
+                <Button className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
+                  Записаться в Telegram
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="h-10 text-sm text-white/70 underline hover:text-white hover:bg-transparent"
+                  onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Посмотреть тарифы
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -613,10 +585,10 @@ export default function YerbaVerdeLandingPage() {
         <footer className="w-full border-t border-[#333333] px-6 py-12 md:px-20 lg:px-[420px]">
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6">
             <h2 className="font-serif text-2xl tracking-tight text-white md:text-3xl">
-              YERBA <span className="text-[#B59F26]">VERDE</span>
+              Денежная <span className="text-[#C9A84C]">Распаковка</span>
             </h2>
-            <p className="text-center text-sm leading-relaxed tracking-tight text-white/55 md:text-base">
-              2025 - Yerba Verde. Все права защищены.
+            <p className="text-center text-sm leading-relaxed tracking-tight text-white/40 md:text-base">
+              2026 — Екатерина Усова. Все права защищены.
             </p>
           </div>
         </footer>
