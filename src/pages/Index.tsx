@@ -570,13 +570,7 @@ export default function MoneyUnpackingLandingPage() {
                 <Button className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
                   Записаться в Telegram
                 </Button>
-                <Button
-                  variant="ghost"
-                  className="h-10 text-sm text-white/70 underline hover:text-white hover:bg-transparent"
-                  onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Посмотреть тарифы
-                </Button>
+
               </div>
             </div>
           </div>
