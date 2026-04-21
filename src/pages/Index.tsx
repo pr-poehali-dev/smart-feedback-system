@@ -332,9 +332,6 @@ export default function MoneyUnpackingLandingPage() {
         <section ref={benefitsRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto flex max-w-7xl flex-col items-start gap-8 lg:flex-row lg:gap-12">
             <div className="benefits-title flex flex-col gap-6 lg:flex-1">
-              <h2 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
-                Не разовая мотивация, а регулярная работа с денежным состоянием
-              </h2>
               <p className="text-pretty text-base leading-relaxed tracking-tight text-white/70 md:text-lg">
                 Каждый месяц вы приходите в прямой эфир и проходите сессию, направленную на раскрытие денежной энергии и устранение внутренних блоков.
               </p>
