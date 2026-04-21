@@ -275,29 +275,40 @@ export default function MoneyUnpackingLandingPage() {
         {/* Hero */}
         <section
           ref={heroRef}
-          className="relative flex min-h-[600px] w-full items-center justify-center px-6 py-16 md:min-h-[800px] md:px-20 md:py-24 lg:min-h-[1030px] lg:px-80"
+          className="relative flex min-h-[600px] w-full items-center justify-center px-6 py-16 md:min-h-[800px] md:px-20 md:py-24 lg:min-h-screen lg:px-80"
           style={{
-            backgroundImage: `radial-gradient(74.86% 63.04% at 50% 71.13%, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%), linear-gradient(190.21deg, rgba(14, 14, 14, 0) 48.79%, #0E0E0E 91.19%), url(/images/design-mode/hero-image.png)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundImage: `radial-gradient(74.86% 63.04% at 50% 71.13%, rgba(14, 14, 14, 0) 0%, #0E0E0E 100%), linear-gradient(190.21deg, rgba(14, 14, 14, 0) 48.79%, #0E0E0E 91.19%)`,
+            backgroundColor: "#0E0E0E",
           }}
         >
-          <div className="flex w-full max-w-7xl flex-col items-center gap-8 md:gap-12 lg:gap-14">
-            <div className="hero-content flex flex-col items-center gap-5 text-center">
+          <div className="flex w-full max-w-7xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+            {/* Фото Екатерины */}
+            <div className="hero-image relative flex-shrink-0 w-full max-w-xs md:max-w-sm lg:max-w-md">
+              <div className="relative overflow-hidden rounded-[32px]">
+                <img
+                  src="https://cdn.poehali.dev/projects/ab453e92-33dc-43b0-9e98-98fa95bc40f7/bucket/87921343-fe96-4231-b9f5-fbbbf041f30e.jpg"
+                  alt="Екатерина Усова — Денежная распаковка"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Текст */}
+            <div className="hero-content flex flex-col items-center gap-5 text-center lg:items-start lg:text-left">
               <span className="rounded-full border border-[#C9A84C]/40 bg-[#C9A84C]/10 px-5 py-2 text-sm text-[#C9A84C]">
                 Ежемесячный онлайн-формат
               </span>
-              <h1 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-5xl lg:text-[56px]">
+              <h1 className="text-balance font-serif text-3xl leading-tight tracking-tight text-white md:text-5xl lg:text-[52px]">
                 Денежная распаковка месяца<br />
                 <span className="text-[#C9A84C]">с Екатериной Усовой</span>
               </h1>
-              <p className="max-w-4xl text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
+              <p className="max-w-xl text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
                 Каждый месяц — живая сессия для раскрытия денежной энергии, снятия внутренних блоков и перехода на новый финансовый уровень.
               </p>
-              <p className="max-w-2xl text-sm text-[#C9A84C]/80 md:text-base">
+              <p className="max-w-xl text-sm text-[#C9A84C]/80 md:text-base">
                 При покупке сейчас — бонус: записи и практики за прошлые 3 месяца распаковки
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-2.5">
+              <div className="flex flex-wrap items-center justify-center gap-2.5 lg:justify-start">
                 <Button
                   className="h-12 rounded-xl bg-white px-6 font-serif text-base text-[#0E0E0E] hover:bg-white/90 md:text-lg"
                   onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
@@ -313,13 +324,6 @@ export default function MoneyUnpackingLandingPage() {
                 </Button>
               </div>
               <p className="text-xs text-white/40">Онлайн, прямой эфир. Если не получается прийти — запись остаётся у вас.</p>
-            </div>
-            <div className="hero-image relative h-[300px] w-full max-w-2xl md:h-[400px] lg:h-[583px] lg:max-w-[884px]">
-              <img
-                src="/images/design-mode/hero-image.png"
-                alt="Денежная распаковка месяца с Екатериной Усовой"
-                className="h-full w-full object-contain"
-              />
             </div>
           </div>
         </section>
@@ -366,11 +370,13 @@ export default function MoneyUnpackingLandingPage() {
         <section ref={aboutRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 lg:flex-row lg:gap-12">
             <div className="about-image w-full lg:flex-1">
-              <img
-                src="/images/design-mode/about-image.png"
-                alt="Что происходит на встрече"
-                className="h-auto w-full rounded-2xl object-cover"
-              />
+              <div className="flex flex-col gap-4 rounded-2xl border border-[#C9A84C]/20 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-8 md:p-10">
+                <span className="font-serif text-5xl text-[#C9A84C] md:text-7xl">✦</span>
+                <p className="font-serif text-2xl leading-snug text-white md:text-3xl">
+                  «Деньги — это энергия. И её можно научиться открывать заново каждый месяц.»
+                </p>
+                <p className="text-sm text-[#C9A84C]/70 md:text-base">— Екатерина Усова</p>
+              </div>
             </div>
             <div className="about-content flex flex-col gap-6 lg:flex-1">
               <h2 className="font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
