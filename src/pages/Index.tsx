@@ -585,6 +585,9 @@ export default function MoneyUnpackingLandingPage() {
             <p className="text-center text-sm leading-relaxed tracking-tight text-white/40 md:text-base">
               2026 — Екатерина Усова. Все права защищены.
             </p>
+            <p className="text-center text-xs leading-relaxed text-white/25">
+              ИП Усова Екатерина Николаевна · ИНН 252150169800 · ОГРНИП 326253600044992
+            </p>
           </div>
         </footer>
       </main>
