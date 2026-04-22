@@ -579,9 +579,6 @@ export default function MoneyUnpackingLandingPage() {
         {/* Footer */}
         <footer className="w-full border-t border-[#333333] px-6 py-12 md:px-20 lg:px-[420px]">
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-6">
-            <h2 className="font-serif text-2xl tracking-tight text-white md:text-3xl">
-              Денежная <span className="text-[#C9A84C]">Распаковка</span>
-            </h2>
             <p className="text-center text-sm leading-relaxed tracking-tight text-white/40 md:text-base">
               2026 — Екатерина Усова. Все права защищены.
             </p>
