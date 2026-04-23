@@ -303,7 +303,7 @@ export default function MoneyUnpackingLandingPage() {
                 <span className="text-[#C9A84C]">с Екатериной Усовой</span>
               </h1>
               <p className="max-w-xl text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                Каждый месяц — живая сессия для раскрытия денежной энергии, снятия внутренних блоков и перехода на новый финансовый уровень.
+                Каждый месяц - живая сессия на раскрытие денежного потенциала.
               </p>
               <p className="max-w-xl text-sm text-[#C9A84C]/80 md:text-base">
                 При покупке сейчас — бонус: записи и практики за прошлые 3 месяца распаковки
