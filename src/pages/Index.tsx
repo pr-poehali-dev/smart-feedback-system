@@ -363,17 +363,8 @@ export default function MoneyUnpackingLandingPage() {
 
         {/* About — Что происходит на встрече */}
         <section ref={aboutRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
-          <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 lg:flex-row lg:gap-12">
-            <div className="about-image w-full lg:flex-1">
-              <div className="flex flex-col gap-4 rounded-2xl border border-[#C9A84C]/20 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-8 md:p-10">
-                <span className="font-serif text-5xl text-[#C9A84C] md:text-7xl">✦</span>
-                <p className="font-serif text-2xl leading-snug text-white md:text-3xl">
-                  «Деньги — это энергия. И её можно научиться открывать заново каждый месяц.»
-                </p>
-                <p className="text-sm text-[#C9A84C]/70 md:text-base">— Екатерина Усова</p>
-              </div>
-            </div>
-            <div className="about-content flex flex-col gap-6 lg:flex-1">
+          <div className="mx-auto max-w-7xl">
+            <div className="about-content flex flex-col gap-6">
               <h2 className="font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
                 Что происходит на встрече
               </h2>
