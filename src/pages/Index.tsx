@@ -451,9 +451,6 @@ export default function MoneyUnpackingLandingPage() {
                 </ul>
               </div>
             </div>
-            <p className="text-center font-serif text-lg text-[#C9A84C] md:text-xl">
-              Разовое участие даёт инсайт. Система даёт результат.
-            </p>
           </div>
         </section>
 
