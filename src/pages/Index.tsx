@@ -426,7 +426,7 @@ export default function MoneyUnpackingLandingPage() {
                 Почему важно идти на 3 месяца
               </h2>
               <p className="text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                Глубинные изменения не происходят за один раз. Деньги — это система ваших привычек, реакций и состояний.
+                Деньги - это отражение вашего внутреннего состояния.
               </p>
             </div>
             <div className="instigate-image grid w-full gap-6 md:grid-cols-2">
