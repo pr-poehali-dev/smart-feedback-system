@@ -545,27 +545,37 @@ export default function MoneyUnpackingLandingPage() {
                 </Button>
               </Card>
             </div>
-            <div className="mt-6 flex items-start gap-3">
-              <input
-                id="consent"
-                type="checkbox"
-                className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
-              />
-              <label htmlFor="consent" className="cursor-pointer text-xs leading-relaxed text-white/40">
-                Нажимая кнопку оплаты, я принимаю условия{" "}
-                <Link to="/offer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
-                  Публичной оферты
-                </Link>
-                {" "}и даю согласие на обработку персональных данных в соответствии с{" "}
-                <Link to="/privacy" className="underline underline-offset-2 hover:text-white/70 transition-colors">
-                  Политикой конфиденциальности
-                </Link>
-                {" "}и{" "}
-                <Link to="/consent" className="underline underline-offset-2 hover:text-white/70 transition-colors">
-                  Согласием на обработку ПД
-                </Link>
-                .
-              </label>
+            <div className="mt-6 flex flex-col gap-3">
+              <div className="flex items-start gap-3">
+                <input
+                  id="consent-offer"
+                  type="checkbox"
+                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
+                />
+                <label htmlFor="consent-offer" className="cursor-pointer text-xs leading-relaxed text-white/40">
+                  Я принимаю условия{" "}
+                  <Link to="/offer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                    Публичной оферты
+                  </Link>
+                </label>
+              </div>
+              <div className="flex items-start gap-3">
+                <input
+                  id="consent-pd"
+                  type="checkbox"
+                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
+                />
+                <label htmlFor="consent-pd" className="cursor-pointer text-xs leading-relaxed text-white/40">
+                  Я даю согласие на обработку персональных данных в соответствии с{" "}
+                  <Link to="/privacy" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                    Политикой конфиденциальности
+                  </Link>
+                  {" "}и{" "}
+                  <Link to="/consent" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                    Согласием на обработку ПД
+                  </Link>
+                </label>
+              </div>
             </div>
           </div>
         </section>
