@@ -585,7 +585,7 @@ export default function MoneyUnpackingLandingPage() {
                   </a>
                 </label>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 rounded-lg p-2">
                 <input
                   id="consent-promo"
                   type="checkbox"
