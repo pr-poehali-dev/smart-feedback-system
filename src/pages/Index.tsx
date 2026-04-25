@@ -336,15 +336,13 @@ export default function MoneyUnpackingLandingPage() {
         {/* Benefits — Формат */}
         <section ref={benefitsRef} className="w-full px-6 py-12 md:px-20 md:py-16 lg:px-80 lg:py-20">
           <div className="mx-auto flex max-w-7xl flex-col gap-4">
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
-                  Каждый месяц — новый шаг в глубину
-                </h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
-                  Последовательная работа с деньгами, которая даёт накопленный результат.
-                </p>
-              </div>
+            <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8 w-full">
+              <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
+                Каждый месяц — новый шаг в глубину
+              </h3>
+              <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
+                Последовательная работа с деньгами, которая даёт накопленный результат.
+              </p>
             </div>
           </div>
         </section>
