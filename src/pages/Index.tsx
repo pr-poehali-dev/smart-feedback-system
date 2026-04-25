@@ -610,8 +610,8 @@ export default function MoneyUnpackingLandingPage() {
                 Денег много и они для тебя - СОЗДАВАЙ!
               </p>
               <div className="flex w-full flex-col gap-3 md:w-auto">
-                <Button className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
-                  Записаться в Telegram
+                <Button asChild className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
+                  <a href="https://t.me/usova_ekaterina_provodnik" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
                 </Button>
 
               </div>
