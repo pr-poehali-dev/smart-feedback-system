@@ -12,6 +12,7 @@ export default function MoneyUnpackingLandingPage() {
   const [progress, setProgress] = useState(0)
   const [consentOffer, setConsentOffer] = useState(false)
   const [consentPd, setConsentPd] = useState(false)
+  const [showErrors, setShowErrors] = useState(false)
   const checkboxesRef = useRef<HTMLDivElement>(null)
 
   const marqueeRef = useRef<HTMLDivElement>(null)
@@ -520,6 +521,7 @@ export default function MoneyUnpackingLandingPage() {
                 <Button
                   onClick={() => {
                     if (!consentOffer || !consentPd) {
+                      setShowErrors(true)
                       checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
                     }
                   }}
@@ -553,6 +555,7 @@ export default function MoneyUnpackingLandingPage() {
                 <Button
                   onClick={() => {
                     if (!consentOffer || !consentPd) {
+                      setShowErrors(true)
                       checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
                     }
                   }}
@@ -563,12 +566,12 @@ export default function MoneyUnpackingLandingPage() {
               </Card>
             </div>
             <div ref={checkboxesRef} className="mt-6 flex flex-col gap-3">
-              <div className="flex items-start gap-3">
+              <div className={`flex items-start gap-3 rounded-lg p-2 transition-all ${showErrors && !consentOffer ? "outline outline-2 outline-red-500/70 bg-red-500/5" : "outline outline-2 outline-transparent"}`}>
                 <input
                   id="consent-offer"
                   type="checkbox"
                   checked={consentOffer}
-                  onChange={(e) => setConsentOffer(e.target.checked)}
+                  onChange={(e) => { setConsentOffer(e.target.checked); if (e.target.checked && consentPd) setShowErrors(false) }}
                   className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
                 />
                 <label htmlFor="consent-offer" className="cursor-pointer text-xs leading-relaxed text-white/40">
@@ -578,12 +581,12 @@ export default function MoneyUnpackingLandingPage() {
                   </a>
                 </label>
               </div>
-              <div className="flex items-start gap-3">
+              <div className={`flex items-start gap-3 rounded-lg p-2 transition-all ${showErrors && !consentPd ? "outline outline-2 outline-red-500/70 bg-red-500/5" : "outline outline-2 outline-transparent"}`}>
                 <input
                   id="consent-pd"
                   type="checkbox"
                   checked={consentPd}
-                  onChange={(e) => setConsentPd(e.target.checked)}
+                  onChange={(e) => { setConsentPd(e.target.checked); if (e.target.checked && consentOffer) setShowErrors(false) }}
                   className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
                 />
                 <label htmlFor="consent-pd" className="cursor-pointer text-xs leading-relaxed text-white/40">
