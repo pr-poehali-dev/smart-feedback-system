@@ -338,25 +338,11 @@ export default function MoneyUnpackingLandingPage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-4">
             <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
               <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">Онлайн, в живом прямом эфире</h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
-                  Присутствуйте из любой точки мира — всё, что нужно, это желание меняться.
-                </p>
-              </div>
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
                 <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
                   Каждый месяц — новый шаг в глубину
                 </h3>
                 <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
                   Последовательная работа с деньгами, которая даёт накопленный результат.
-                </p>
-              </div>
-              <div className="benefit-card flex flex-col gap-2 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#0E0E0E] p-6 md:p-8">
-                <h3 className="font-serif text-2xl leading-tight tracking-tight text-white md:text-3xl">
-                  Запись остаётся у вас
-                </h3>
-                <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
-                  Не смогли прийти онлайн — пересмотрите в удобное время без потери контента.
                 </p>
               </div>
             </div>
