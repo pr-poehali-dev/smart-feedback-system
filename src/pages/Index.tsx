@@ -467,7 +467,7 @@ export default function MoneyUnpackingLandingPage() {
                 Бонус при покупке
               </h2>
               <p className="text-pretty text-base leading-relaxed tracking-tight text-[#CCCCCC] md:text-lg">
-                При покупке вы получаете прошлые 3 месяца распаковки + аудио-практики в подарок.
+                При покупке вы получаете прошлые <strong className="text-white font-bold">3 месяца распаковки</strong> + <strong className="text-white font-bold">аудио-практики</strong> в подарок.
               </p>
             </div>
             <div className="why-image w-full">
