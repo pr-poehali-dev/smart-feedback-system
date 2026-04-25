@@ -554,9 +554,9 @@ export default function MoneyUnpackingLandingPage() {
                 />
                 <label htmlFor="consent-offer" className="cursor-pointer text-xs leading-relaxed text-white/40">
                   Я принимаю условия{" "}
-                  <Link to="/offer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                  <a href="https://disk.yandex.ru/i/IIHqhySXcAvRRw" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
                     Публичной оферты
-                  </Link>
+                  </a>
                 </label>
               </div>
               <div className="flex items-start gap-3">
@@ -567,13 +567,26 @@ export default function MoneyUnpackingLandingPage() {
                 />
                 <label htmlFor="consent-pd" className="cursor-pointer text-xs leading-relaxed text-white/40">
                   Я даю согласие на обработку персональных данных в соответствии с{" "}
-                  <Link to="/privacy" className="underline underline-offset-2 hover:text-white/70 transition-colors">
-                    Политикой конфиденциальности
-                  </Link>
+                  <a href="https://disk.yandex.ru/i/1PRysFhwnwEl7A" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                    Политикой обработки и защиты ПД
+                  </a>
                   {" "}и{" "}
-                  <Link to="/consent" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                  <a href="https://disk.yandex.ru/i/bXXbgdXmWPdmfQ" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
                     Согласием на обработку ПД
-                  </Link>
+                  </a>
+                </label>
+              </div>
+              <div className="flex items-start gap-3">
+                <input
+                  id="consent-promo"
+                  type="checkbox"
+                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
+                />
+                <label htmlFor="consent-promo" className="cursor-pointer text-xs leading-relaxed text-white/40">
+                  Я даю{" "}
+                  <a href="https://disk.yandex.ru/i/T91bY6fjpNWJVA" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white/70 transition-colors">
+                    согласие на получение рекламной и информационной рассылки
+                  </a>
                 </label>
               </div>
             </div>
