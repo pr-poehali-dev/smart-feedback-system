@@ -610,7 +610,7 @@ export default function MoneyUnpackingLandingPage() {
           <div className="mx-auto max-w-5xl">
             <div className="cta-box flex flex-col items-center gap-6 rounded-[20px] bg-gradient-to-r from-[#8B6914] to-[#C9A84C] p-6 md:flex-row md:gap-8 md:p-12 lg:p-16">
               <p className="flex-1 text-balance text-center font-semibold leading-tight tracking-tight text-white md:text-left md:text-2xl lg:text-[26px]">
-                Если вы готовы изменить не только отношение к деньгам, но и свой уровень жизни — вам сюда
+                Денег много и они для тебя - СОЗДАВАЙ!
               </p>
               <div className="flex w-full flex-col gap-3 md:w-auto">
                 <Button className="h-12 w-full rounded-xl bg-[#0E0E0E] text-base text-white hover:bg-[#0E0E0E]/90 md:w-auto md:px-8 md:text-lg">
