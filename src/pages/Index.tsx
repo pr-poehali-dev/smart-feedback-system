@@ -10,6 +10,9 @@ gsap.registerPlugin(ScrollTrigger)
 export default function MoneyUnpackingLandingPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
+  const [consentOffer, setConsentOffer] = useState(false)
+  const [consentPd, setConsentPd] = useState(false)
+  const checkboxesRef = useRef<HTMLDivElement>(null)
 
   const marqueeRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
@@ -514,7 +517,14 @@ export default function MoneyUnpackingLandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="mt-auto h-12 w-full rounded-xl bg-white/10 text-base font-medium text-white hover:bg-white/20 md:text-lg">
+                <Button
+                  onClick={() => {
+                    if (!consentOffer || !consentPd) {
+                      checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    }
+                  }}
+                  className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-white/10 text-white hover:bg-white/20 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
+                >
                   Выбрать месяц
                 </Button>
               </Card>
@@ -540,16 +550,25 @@ export default function MoneyUnpackingLandingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button className="mt-auto h-12 w-full rounded-xl bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-base font-medium text-white hover:opacity-90 md:text-lg">
+                <Button
+                  onClick={() => {
+                    if (!consentOffer || !consentPd) {
+                      checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    }
+                  }}
+                  className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-white hover:opacity-90 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
+                >
                   Взять 3 месяца
                 </Button>
               </Card>
             </div>
-            <div className="mt-6 flex flex-col gap-3">
+            <div ref={checkboxesRef} className="mt-6 flex flex-col gap-3">
               <div className="flex items-start gap-3">
                 <input
                   id="consent-offer"
                   type="checkbox"
+                  checked={consentOffer}
+                  onChange={(e) => setConsentOffer(e.target.checked)}
                   className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
                 />
                 <label htmlFor="consent-offer" className="cursor-pointer text-xs leading-relaxed text-white/40">
@@ -563,6 +582,8 @@ export default function MoneyUnpackingLandingPage() {
                 <input
                   id="consent-pd"
                   type="checkbox"
+                  checked={consentPd}
+                  onChange={(e) => setConsentPd(e.target.checked)}
                   className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[#C9A84C]"
                 />
                 <label htmlFor="consent-pd" className="cursor-pointer text-xs leading-relaxed text-white/40">
