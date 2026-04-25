@@ -471,19 +471,7 @@ export default function MoneyUnpackingLandingPage() {
               </p>
             </div>
             <div className="why-image w-full">
-              <div className="grid gap-4 md:grid-cols-3">
-                {[
-                  { month: "Февраль", theme: "Проработка внутренней ценности" },
-                  { month: "Март", theme: "Проработка страха остаться без денег, возвращение опоры и безопасности" },
-                  { month: "Апрель", theme: "Проработка негативных денежных установок и убеждений" },
-                ].map((b, i) => (
-                  <div key={i} className="flex flex-col gap-3 rounded-2xl border border-[#C9A84C]/20 bg-gradient-to-br from-[#1a1500] to-[#0E0E0E] p-6">
-                    <span className="text-xs uppercase tracking-widest text-[#C9A84C]/60">{b.month}</span>
-                    <p className="text-sm leading-relaxed text-white md:text-base">{b.theme}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 rounded-2xl border border-white/10 bg-[#111111] p-6">
+              <div className="rounded-2xl border border-white/10 bg-[#111111] p-6">
                 <p className="mb-3 text-sm text-white/50 uppercase tracking-widest">Аудио-практики</p>
                 <div className="flex flex-wrap gap-2">
                   {["Внутренний ребёнок", "Проработка финансовых ограничений", "Раскрытие женской сексуальной энергии"].map((p, i) => (
