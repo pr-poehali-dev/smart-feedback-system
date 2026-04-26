@@ -510,6 +510,8 @@ export default function MoneyUnpackingLandingPage() {
                     if (!consentOffer || !consentPd) {
                       setShowErrors(true)
                       checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    } else {
+                      window.open("https://paylink.tbank.ru/8be3f88c-8757-4edd-a1a1-c71b3e5e9f1a", "_blank", "noopener,noreferrer")
                     }
                   }}
                   className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-white/10 text-white hover:bg-white/20 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
@@ -544,6 +546,8 @@ export default function MoneyUnpackingLandingPage() {
                     if (!consentOffer || !consentPd) {
                       setShowErrors(true)
                       checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+                    } else {
+                      window.open("https://paylink.tbank.ru/8be3f88c-8757-4edd-a1a1-c71b3e5e9f1a", "_blank", "noopener,noreferrer")
                     }
                   }}
                   className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-white hover:opacity-90 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
