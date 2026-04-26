@@ -358,7 +358,7 @@ export default function MoneyUnpackingLandingPage() {
                   Июль — «деньги достаются тяжёлым трудом»
                 </h3>
                 <p className="text-sm leading-relaxed tracking-tight text-white/80 md:text-base">
-                  Переработка установки, выход из напряжения и выгорания.
+                  Проработка установки, выход из напряжения и выгорания.
                 </p>
               </div>
             </div>
