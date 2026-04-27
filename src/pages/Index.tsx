@@ -13,7 +13,38 @@ export default function MoneyUnpackingLandingPage() {
   const [consentOffer, setConsentOffer] = useState(false)
   const [consentPd, setConsentPd] = useState(false)
   const [showErrors, setShowErrors] = useState(false)
+  const [paymentLoading, setPaymentLoading] = useState<string | null>(null)
+  const [paymentError, setPaymentError] = useState<string | null>(null)
   const checkboxesRef = useRef<HTMLDivElement>(null)
+
+  const handlePayment = async (amount: number, description: string, tariffId: string) => {
+    if (!consentOffer || !consentPd) {
+      setShowErrors(true)
+      checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
+      return
+    }
+    setPaymentLoading(tariffId)
+    setPaymentError(null)
+    try {
+      const orderId = `order-${tariffId}-${Date.now()}`
+      const res = await fetch("https://functions.poehali.dev/f323e995-3278-4aad-8773-53a8a098369b", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount, description, order_id: orderId })
+      })
+      const data = await res.json()
+      const parsed = typeof data === "string" ? JSON.parse(data) : data
+      if (parsed.success && parsed.payment_url) {
+        window.open(parsed.payment_url, "_blank", "noopener,noreferrer")
+      } else {
+        setPaymentError(parsed.error || "Ошибка создания платежа")
+      }
+    } catch {
+      setPaymentError("Не удалось связаться с сервером оплаты")
+    } finally {
+      setPaymentLoading(null)
+    }
+  }
 
   const marqueeRef = useRef<HTMLDivElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
@@ -506,17 +537,11 @@ export default function MoneyUnpackingLandingPage() {
                   ))}
                 </ul>
                 <Button
-                  onClick={() => {
-                    if (!consentOffer || !consentPd) {
-                      setShowErrors(true)
-                      checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
-                    } else {
-                      window.open("https://paylink.tbank.ru/8be3f88c-8757-4edd-a1a1-c71b3e5e9f1a", "_blank", "noopener,noreferrer")
-                    }
-                  }}
+                  disabled={paymentLoading === "month"}
+                  onClick={() => handlePayment(99000, "Тариф 1 месяц", "month")}
                   className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-white/10 text-white hover:bg-white/20 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
                 >
-                  Выбрать месяц
+                  {paymentLoading === "month" ? "Загрузка..." : "Выбрать месяц"}
                 </Button>
               </Card>
 
@@ -542,18 +567,15 @@ export default function MoneyUnpackingLandingPage() {
                   ))}
                 </ul>
                 <Button
-                  onClick={() => {
-                    if (!consentOffer || !consentPd) {
-                      setShowErrors(true)
-                      checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
-                    } else {
-                      window.open("https://paylink.tbank.ru/8be3f88c-8757-4edd-a1a1-c71b3e5e9f1a", "_blank", "noopener,noreferrer")
-                    }
-                  }}
+                  disabled={paymentLoading === "3months"}
+                  onClick={() => handlePayment(250000, "Тариф 3 месяца", "3months")}
                   className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-white hover:opacity-90 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
                 >
-                  Взять 3 месяца
+                  {paymentLoading === "3months" ? "Загрузка..." : "Взять 3 месяца"}
                 </Button>
+                {paymentError && (
+                  <p className="text-center text-sm text-red-400">{paymentError}</p>
+                )}
               </Card>
             </div>
             <div ref={checkboxesRef} className="mt-6 flex flex-col gap-3">
