@@ -547,7 +547,7 @@ export default function MoneyUnpackingLandingPage() {
                       setShowErrors(true)
                       checkboxesRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
                     } else {
-                      window.open("https://paylink.tbank.ru/8be3f88c-8757-4edd-a1a1-c71b3e5e9f1a", "_blank", "noopener,noreferrer")
+                      window.open("https://pay.tbank.ru/hL0obW4a", "_blank", "noopener,noreferrer")
                     }
                   }}
                   className={`mt-auto h-12 w-full rounded-xl text-base font-medium md:text-lg transition-all ${consentOffer && consentPd ? "bg-gradient-to-r from-[#8B6914] to-[#C9A84C] text-white hover:opacity-90 cursor-pointer" : "bg-white/5 text-white/30 cursor-not-allowed"}`}
@@ -556,6 +556,7 @@ export default function MoneyUnpackingLandingPage() {
                 </Button>
               </Card>
             </div>
+
             <div ref={checkboxesRef} className="mt-6 flex flex-col gap-3">
               <div className={`flex items-start gap-3 rounded-lg p-2 transition-all ${showErrors && !consentOffer ? "outline outline-2 outline-red-500/70 bg-red-500/5" : "outline outline-2 outline-transparent"}`}>
                 <input
