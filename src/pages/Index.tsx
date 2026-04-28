@@ -483,7 +483,7 @@ export default function MoneyUnpackingLandingPage() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" ref={pricingRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-[420px] lg:py-28">
+        <section id="pricing" ref={pricingRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-24 lg:py-28">
           <div className="mx-auto max-w-5xl">
             <h2 className="mb-10 text-center font-serif text-3xl leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
               Выберите формат участия
