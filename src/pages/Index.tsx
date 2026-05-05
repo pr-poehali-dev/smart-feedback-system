@@ -524,7 +524,7 @@ export default function MoneyUnpackingLandingPage() {
               <Card className="pricing-card flex flex-col gap-6 rounded-2xl border border-[#C9A84C]/40 bg-gradient-to-br from-[#2a1f00] to-[#0E0E0E] p-6 shadow-lg md:p-8">
                 <div>
                   <span className="rounded-full bg-[#C9A84C] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-black">
-                    самый выгодный вариант
+                    выгодный вариант
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
