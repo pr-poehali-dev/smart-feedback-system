@@ -398,12 +398,12 @@ export default function MoneyUnpackingLandingPage() {
           </div>
         </section>
 
-        {/* Desire — Что меняется в результате */}
+        {/* Desire — Что может меняться в результате работы */}
         <section ref={desireRef} className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-80 lg:py-28">
           <div className="mx-auto max-w-7xl">
             <div className="rounded-[40px] border-2 border-[#1E1E1E] bg-[#0E0E0E] px-6 py-12 md:px-12 md:py-16 lg:px-24">
               <h2 className="mb-8 text-balance text-center font-serif text-3xl leading-tight tracking-tight text-white md:mb-12 md:text-4xl lg:text-[56px]">
-                Что меняется в результате
+                Что может меняться в результате работы
               </h2>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
                 {[
