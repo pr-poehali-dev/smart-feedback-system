@@ -374,10 +374,10 @@ export default function MoneyUnpackingLandingPage() {
               </h2>
               <ul className="flex flex-col gap-3">
                 {[
-                  "Уходят страхи, ограничивающие убеждения и установки",
-                  "Снижается внутреннее напряжение и контроль",
-                  "Раскрывается ваша ценность и уверенность",
-                  "Появляется энергия на действия и рост",
+                  "Исследование страхов и внутренних сопротивлений, связанных с деньгами",
+                  "Работа с ощущением самоценности, уверенности и реализации",
+                  "Выполнение практик для более глубокого контакта с собой и своими состояниями",
+                  "Снижается напряжение и контроль",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-base leading-relaxed text-white/80 md:text-lg">
                     <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#C9A84C]/20 text-xs text-[#C9A84C]">✓</span>
