@@ -318,7 +318,7 @@ export default function MoneyUnpackingLandingPage() {
                   className="h-12 rounded-xl bg-white px-6 font-serif text-base text-[#0E0E0E] hover:bg-white/90 md:text-lg"
                   onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Присоединиться — от 990 ₽
+                  Присоединиться — от 1 000 ₽
                 </Button>
                 <Button
                   variant="outline"
