@@ -497,7 +497,7 @@ export default function MoneyUnpackingLandingPage() {
                   </h3>
                   <p className="text-sm text-white/40">Мягкий вход</p>
                 </div>
-                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">990 <span className="text-2xl font-normal">₽</span></p>
+                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">1 000 <span className="text-2xl font-normal">₽</span></p>
                 <ul className="flex flex-col gap-2">
                   {["1 онлайн-сессия месяца", "Запись текущего эфира", "Подходит для мягкого входа"].map((f, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-white/70 md:text-base">
@@ -533,7 +533,7 @@ export default function MoneyUnpackingLandingPage() {
                   </h3>
                   <p className="text-sm text-[#C9A84C]/60">Глубокая трансформация</p>
                 </div>
-                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">2 500 <span className="text-2xl font-normal">₽</span></p>
+                <p className="text-5xl font-bold tracking-tight text-white md:text-6xl">2 700 <span className="text-2xl font-normal">₽</span></p>
                 <ul className="flex flex-col gap-2">
                   {["3 месяца участия подряд", "Глубокая последовательная трансформация", "Бонус: прошлые 3 месяца распаковок"].map((f, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-white md:text-base">
